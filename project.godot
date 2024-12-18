@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Brackeys Programming"
-run/main_scene="res://brackeys_tutorial/main.tscn"
+run/main_scene="res://idle_tutorial/idle_01.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
