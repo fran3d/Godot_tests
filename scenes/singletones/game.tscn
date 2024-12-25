@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cauvu03f4ooyj"]
+
+[ext_resource type="Script" path="res://scenes/singletones/game.gd" id="1_ujrsm"]
+[ext_resource type="PackedScene" uid="uid://dei0w3ggja387" path="res://scenes/first_scene/first_scene.tscn" id="2_ll12u"]
+[ext_resource type="PackedScene" uid="uid://bjmx1ttq5lh71" path="res://scenes/second_scene/second_scene.tscn" id="3_33ky0"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_ujrsm")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+
+[node name="FirstScene" parent="TabContainer" instance=ExtResource("2_ll12u")]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="SecondScene" parent="TabContainer" instance=ExtResource("3_33ky0")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1

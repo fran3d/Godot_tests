@@ -10,16 +10,17 @@ config_version=5
 
 [application]
 
-config/name="Brackeys Programming"
-run/main_scene="res://idle_tutorial/idle_01.tscn"
+config/name="Godot tests"
+run/main_scene="res://scenes/singletones/game.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [file_customization]
 
 folder_colors={
-"res://brackeys_tutorial/": "red",
-"res://idle_tutorial/": "blue"
+"res://assets/": "blue",
+"res://data_structures/": "purple",
+"res://scenes/": "green"
 }
 
 [input]
