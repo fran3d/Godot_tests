@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://del662y50k5qa"]
+
+[ext_resource type="Script" path="res://scenes/singletones/idleonGenerator/idleon_generator.gd" id="1_oxkwt"]
+
+[node name="IdleonGenerator" type="Node"]
+script = ExtResource("1_oxkwt")

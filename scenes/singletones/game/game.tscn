@@ -1,11 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cauvu03f4ooyj"]
+[gd_scene load_steps=6 format=3 uid="uid://cauvu03f4ooyj"]
 
-[ext_resource type="Script" path="res://scenes/singletones/game.gd" id="1_ujrsm"]
+[ext_resource type="Script" path="res://scenes/singletones/game/game.gd" id="1_ujrsm"]
+[ext_resource type="PackedScene" uid="uid://drjmd8wq1yjg1" path="res://scenes/singletones/clock/clock.tscn" id="2_f7e0u"]
 [ext_resource type="PackedScene" uid="uid://dei0w3ggja387" path="res://scenes/first_scene/first_scene.tscn" id="2_ll12u"]
 [ext_resource type="PackedScene" uid="uid://bjmx1ttq5lh71" path="res://scenes/second_scene/second_scene.tscn" id="3_33ky0"]
+[ext_resource type="PackedScene" uid="uid://del662y50k5qa" path="res://scenes/singletones/idleonGenerator/idleon_generator.tscn" id="3_jt3lh"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_ujrsm")
+
+[node name="Clock" parent="." instance=ExtResource("2_f7e0u")]
+
+[node name="IdleonGenerator" parent="." instance=ExtResource("3_jt3lh")]
 
 [node name="TabContainer" type="TabContainer" parent="."]
 anchors_preset = 15

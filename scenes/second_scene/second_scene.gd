@@ -26,6 +26,7 @@ func _try_to_unlock() -> void:
 	
 	Game.ref.data.resources.idleons -= COST
 	Game.ref.data.progression.second_scene_unlocked = true
+	IdleonGenerator.ref.start_generator()
 
 	_display_view(true)
 

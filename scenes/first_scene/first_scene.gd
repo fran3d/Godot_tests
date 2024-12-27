@@ -4,7 +4,7 @@ extends Control
 ## Reference to the data object.
 var data:Data = Game.ref.data
 
-@export var amountIdleons:int = 1
+@export var amountIdleons:int = 10
 
 
 func _ready() -> void:
