@@ -1,24 +1,26 @@
 class_name FirstScene
 extends Control
 
-## Reference to the data object.
-var data:Data = Game.ref.data
-
 @export var amountIdleons:int = 10
 
-
 func _ready() -> void:
-	update_labels()
+	update_label()
 	(get_node("AddIdleonButton")as Button).pressed.connect(_on_AddIdleonButton_pressed)
+	IdleonsManager.ref.idleons_updated.connect(_on_idleons_updated)
 
-func _process(_delta: float) -> void:
-	update_labels()
 
+## Updates the label to display the latest known amount of Idleons
+func update_label():
+	(get_node("IdleonLabel")as Label).text="Idleons: %s"%IdleonsManager.ref.get_idleons()
+
+## Generates Idleons and update the label
+func create_idleons()->void:
+	IdleonsManager.ref.create_idleons(amountIdleons)
+	update_label()
 	
-func update_labels():
-	(get_node("AddIdleonButton")as Button).text="Add %s idleons"%amountIdleons
-	(get_node("IdleonLabel")as Label).text="Idleons: %s"%data.resources.idleons
-	
+## Triggered when the button is pressed
 func _on_AddIdleonButton_pressed() -> void:
-	data.resources.idleons += amountIdleons
-	update_labels()
+	create_idleons()
+
+func _on_idleons_updated() -> void:
+	update_label()

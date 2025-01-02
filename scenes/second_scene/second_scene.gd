@@ -21,10 +21,10 @@ func _try_to_unlock() -> void:
 	if Game.ref.data.progression.second_scene_unlocked:
 		return
 	
-	if Game.ref.data.resources.idleons < COST:
-		return
+	var error: Error = IdleonsManager.ref.consume_idleons(COST)
 	
-	Game.ref.data.resources.idleons -= COST
+	if error: return
+		
 	Game.ref.data.progression.second_scene_unlocked = true
 	IdleonGenerator.ref.start_generator()
 

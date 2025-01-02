@@ -39,8 +39,8 @@ func _progress_cycle()->void:
 ## Generate resources and refresh the cycle progression
 func _generate()->void:
 	_cycle_progression-=_cycle_duration
+	IdleonsManager.ref.create_idleons(_production)
 	
-	Game.ref.data.resources.idleons += _production
 
 ## Unpauses the generator
 func start_generator()->void:
